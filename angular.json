@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "Student-DBM"
+    }
+  },
+  "defaultProject": "Student-DBM",
+  "cli": {
+    "analytics": "9110e5ad-a23a-49b8-8db2-bbff067dfdce"
+  }
 }
