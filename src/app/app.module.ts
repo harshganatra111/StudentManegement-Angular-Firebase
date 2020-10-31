@@ -13,13 +13,24 @@ import { DisplayAllComponent } from './display-all/display-all.component';
 import { DeleteDataComponent } from './delete-data/delete-data.component'
 import { AddDataComponent } from './add-data/add-data.component';
 import { InsertService } from './_services/insert.service';
+import { GetAllDataService } from './_services';
+import { NotFoundComponent } from './404/404.component';
+import { HomeComponent } from './home/home.component';
+import { DisciplinaryActionsComponent } from './disciplinary-actions/disciplinary-actions.component';
+import { CoCurricularComponent } from './co-curricular/co-curricular.component';
+import { ExtraCurricularComponent } from './extra-curricular/extra-curricular.component';
 @NgModule({
   declarations: [
     AppComponent,
     AddDataComponent,
     UpdateComponent,
     DisplayAllComponent,
-    DeleteDataComponent
+    DeleteDataComponent,
+    NotFoundComponent,
+    HomeComponent,
+    DisciplinaryActionsComponent,
+    CoCurricularComponent,
+    ExtraCurricularComponent
   ],
   imports: [
     BrowserModule,
@@ -28,10 +39,11 @@ import { InsertService } from './_services/insert.service';
     AngularFirestoreModule, // firestore
     AngularFireAuthModule, // auth
     AngularFireStorageModule,
-    FormsModule 
+    FormsModule
   ],
   providers: [
-    InsertService
+    InsertService,
+    GetAllDataService
   ],
   bootstrap: [AppComponent]
 })

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { InsertService } from '../_services/';
+import { GetAllDataService, InsertService } from '../_services/';
 @Component({
   selector: 'app-add-data',
   templateUrl: './add-data.component.html',
@@ -10,9 +10,22 @@ export class AddDataComponent implements OnInit {
   age: number;
   address: string;
   email: string;
-  constructor(private insertService: InsertService) { }
+  student: any;
+  constructor(private insertService: InsertService,private displayService: GetAllDataService) { }
 
   ngOnInit(): void {
+    this.displayService.getAllData().subscribe(data => {
+      this.student = data.map(e=>{
+        return{
+          id: e.payload.doc.id,
+          name: e.payload.doc.data()['name'],
+          age: e.payload.doc.data()['age'],
+          address: e.payload.doc.data()['address'],
+        };
+
+      });
+
+    });
   }
   insert(){
     let studentData = {};
@@ -20,6 +33,7 @@ export class AddDataComponent implements OnInit {
     studentData['age'] = this.age;
     studentData['address'] = this.address;
     studentData['email'] = this.email;
+    studentData['regno'] = 1760000 + parseInt(this.student.length)+ 1;
     this.insertService.insertData(studentData).then(res => {
       this.name="";
       this.address= "";
@@ -27,10 +41,10 @@ export class AddDataComponent implements OnInit {
       this.email="";
       alert("Insertion Successful")
       console.log(res);
-      
+
     }).catch(err=>{
       console.log(err);
-      
+
     });
   }
 }
