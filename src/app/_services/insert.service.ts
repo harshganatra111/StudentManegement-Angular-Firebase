@@ -15,4 +15,7 @@ export class InsertService {
   insertDisData(studentData){
     return this.fireService.collection('DisciplinaryActions').add(studentData)
   }
+  insertExtraCurricularData(studentData){
+    return this.fireService.collection('ExtraCurricular').add(studentData)
+  }
 }

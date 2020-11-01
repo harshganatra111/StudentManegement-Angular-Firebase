@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { InsertService, GetAllDataService } from '../_services';
 
 @Component({
   selector: 'app-extra-curricular',
@@ -7,9 +8,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ExtraCurricularComponent implements OnInit {
 
-  constructor() { }
+  regno: number;
+  message: string;
+  constructor(private insertService: InsertService,private displayService: GetAllDataService) { }
 
   ngOnInit(): void {
   }
+  insert(){
+    let coData = {};
+    coData['regno'] = this.regno;
+    coData['message'] = this.message;
+    this.insertService.insertExtraCurricularData(coData).then(res => {
+      this.regno=undefined;
+      this.message= "";
+      alert("Insertion Successful")
+      console.log(res);
 
+    }).catch(err=>{
+      console.log(err);
+
+    });
+  }
 }

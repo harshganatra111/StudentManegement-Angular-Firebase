@@ -5,6 +5,7 @@ import { AddDataComponent } from './add-data/add-data.component';
 import { CoCurricularComponent } from './co-curricular/co-curricular.component';
 import { DisciplinaryActionsComponent } from './disciplinary-actions/disciplinary-actions.component';
 import { DisplayAllComponent } from './display-all/display-all.component';
+import { ExtraCurricularComponent } from './extra-curricular/extra-curricular.component';
 import { HomeComponent } from './home/home.component';
 
 
@@ -15,6 +16,7 @@ const routes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: 'Cocurricular', component: CoCurricularComponent},
   {path: 'DisciplinaryActions', component: DisciplinaryActionsComponent},
+  {path: 'ExtraCurricular', component: ExtraCurricularComponent},
   // Insert All paths above this comment
   {path: '**', component: NotFoundComponent}
 ];
