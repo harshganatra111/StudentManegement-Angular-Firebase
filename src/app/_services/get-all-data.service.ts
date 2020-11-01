@@ -10,4 +10,13 @@ export class GetAllDataService {
   getStudentData(){
     return this.fireService.collection('Student').snapshotChanges();
   }
+  getCocurricularData(){
+    return this.fireService.collection('Cocurricular').snapshotChanges();
+  }
+  getExtraCurricularData(){
+    return this.fireService.collection('ExtraCurricular').snapshotChanges();
+  }
+  getDisciplinaryActions(){
+    return this.fireService.collection('DisciplinaryActions').snapshotChanges();
+  }
 }
