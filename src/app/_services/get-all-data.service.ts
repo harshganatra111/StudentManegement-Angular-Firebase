@@ -7,7 +7,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
 export class GetAllDataService {
 
   constructor(public fireService: AngularFirestore) { }
-  getAllData(){
+  getStudentData(){
     return this.fireService.collection('Student').snapshotChanges();
   }
 }

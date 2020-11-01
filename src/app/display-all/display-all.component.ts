@@ -11,7 +11,7 @@ export class DisplayAllComponent implements OnInit {
   constructor(private displayService: GetAllDataService) { }
   student = {};
   ngOnInit(): void {
-    this.displayService.getAllData().subscribe(data => {
+    this.displayService.getStudentData  ().subscribe(data => {
       this.student = data.map(e=>{
         return{
           id: e.payload.doc.id,

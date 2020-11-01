@@ -14,7 +14,7 @@ export class AddDataComponent implements OnInit {
   constructor(private insertService: InsertService,private displayService: GetAllDataService) { }
 
   ngOnInit(): void {
-    this.displayService.getAllData().subscribe(data => {
+    this.displayService.getStudentData().subscribe(data => {
       this.student = data.map(e=>{
         return{
           id: e.payload.doc.id,
@@ -34,7 +34,7 @@ export class AddDataComponent implements OnInit {
     studentData['address'] = this.address;
     studentData['email'] = this.email;
     studentData['regno'] = 1760000 + parseInt(this.student.length)+ 1;
-    this.insertService.insertData(studentData).then(res => {
+    this.insertService.insertStudentData(studentData).then(res => {
       this.name="";
       this.address= "";
       this.age=undefined;
