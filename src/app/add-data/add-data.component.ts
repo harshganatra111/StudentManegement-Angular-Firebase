@@ -11,6 +11,8 @@ export class AddDataComponent implements OnInit {
   address: string;
   email: string;
   student: any;
+  regno: number;
+  maxRegno = 0;
   constructor(private insertService: InsertService,private displayService: GetAllDataService) { }
 
   ngOnInit(): void {
@@ -21,11 +23,25 @@ export class AddDataComponent implements OnInit {
           name: e.payload.doc.data()['name'],
           age: e.payload.doc.data()['age'],
           address: e.payload.doc.data()['address'],
+          regno: e.payload.doc.data()['regno']
         };
 
       });
-
+      console.log(this.student);
+      this.getMaxRegno(this.student);
     });
+
+
+  }
+  getMaxRegno(student){
+    for(var i in student){
+      console.log(student[i]);
+      if(student[i].regno > this.maxRegno){
+        this.maxRegno = student[i].regno;
+        console.log(this.maxRegno);
+
+      }
+    }
   }
   insert(){
     let studentData = {};
@@ -33,13 +49,14 @@ export class AddDataComponent implements OnInit {
     studentData['age'] = this.age;
     studentData['address'] = this.address;
     studentData['email'] = this.email;
-    studentData['regno'] = 1760000 + parseInt(this.student.length)+ 1;
+    this.regno = 1760000 + parseInt(this.student.length)+ 1;
+    studentData['regno'] = this.maxRegno ? this.maxRegno+1: this.regno ;
     this.insertService.insertStudentData(studentData).then(res => {
+      alert("Insertion Successful\nStudent Regno is :"+ studentData['regno']);
       this.name="";
       this.address= "";
       this.age=undefined;
       this.email="";
-      alert("Insertion Successful")
       console.log(res);
 
     }).catch(err=>{

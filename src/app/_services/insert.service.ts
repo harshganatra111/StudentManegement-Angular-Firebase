@@ -7,18 +7,21 @@ export class InsertService {
 
   constructor(public fireService: AngularFirestore) { }
   insertStudentData(studentData){
-    return this.fireService.collection('Student').add(studentData)
+    return this.fireService.collection('Student').add(studentData);
   }
   insertCoData(studentData){
-    return this.fireService.collection('Cocurricular').add(studentData)
+    return this.fireService.collection('Cocurricular').add(studentData);
   }
   insertDisData(studentData){
-    return this.fireService.collection('DisciplinaryActions').add(studentData)
+    return this.fireService.collection('DisciplinaryActions').add(studentData);
   }
   insertExtraCurricularData(studentData){
-    return this.fireService.collection('ExtraCurricular').add(studentData)
+    return this.fireService.collection('ExtraCurricular').add(studentData);
   }
   insertProgramData(studentData){
-    return this.fireService.collection('ProgramData').add(studentData)
+    return this.fireService.collection('ProgramData').add(studentData);
+  }
+  insertCourseData(studentData){
+    return this.fireService.collection('CourseData').add(studentData);
   }
 }
