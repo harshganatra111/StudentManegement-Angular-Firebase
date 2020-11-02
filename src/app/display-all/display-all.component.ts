@@ -30,7 +30,7 @@ export class DisplayAllComponent implements OnInit {
     this.displayService.getCocurricularData().subscribe(data =>{
       this.coCurricularData = data.map(e=>{
         return{
-          ed: e.payload.doc.id,
+          id: e.payload.doc.id,
           regno: e.payload.doc.data()['regno'],
           message: e.payload.doc.data()['message']
         }
@@ -41,7 +41,7 @@ export class DisplayAllComponent implements OnInit {
     this.displayService.getExtraCurricularData().subscribe(data =>{
       this.extraCurricularData = data.map(e=>{
         return{
-          ed: e.payload.doc.id,
+          id: e.payload.doc.id,
           regno: e.payload.doc.data()['regno'],
           message: e.payload.doc.data()['message']
         }
@@ -52,9 +52,21 @@ export class DisplayAllComponent implements OnInit {
     this.displayService.getExtraCurricularData().subscribe(data =>{
       this.disciplinaryActions = data.map(e=>{
         return{
-          ed: e.payload.doc.id,
+          id: e.payload.doc.id,
           regno: e.payload.doc.data()['regno'],
           message: e.payload.doc.data()['message']
+        }
+      });
+      console.log(this.disciplinaryActions);
+
+    });
+    this.displayService.getProgramData().subscribe(data =>{
+      this.disciplinaryActions = data.map(e=>{
+        return{
+          id: e.payload.doc.id,
+          regno: e.payload.doc.data()['regno'],
+          pname: e.payload.doc.data()['pname'],
+          currentYear: e.payload.doc.data()['currentYear']
         }
       });
       console.log(this.disciplinaryActions);

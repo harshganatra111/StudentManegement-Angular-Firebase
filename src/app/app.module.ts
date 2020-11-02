@@ -19,6 +19,7 @@ import { HomeComponent } from './home/home.component';
 import { DisciplinaryActionsComponent } from './disciplinary-actions/disciplinary-actions.component';
 import { CoCurricularComponent } from './co-curricular/co-curricular.component';
 import { ExtraCurricularComponent } from './extra-curricular/extra-curricular.component';
+import { AddProgramComponent } from './add-program/add-program.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +31,8 @@ import { ExtraCurricularComponent } from './extra-curricular/extra-curricular.co
     HomeComponent,
     DisciplinaryActionsComponent,
     CoCurricularComponent,
-    ExtraCurricularComponent
+    ExtraCurricularComponent,
+    AddProgramComponent
   ],
   imports: [
     BrowserModule,
