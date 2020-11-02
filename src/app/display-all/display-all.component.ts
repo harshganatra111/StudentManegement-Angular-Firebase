@@ -9,10 +9,13 @@ import { GetAllDataService } from '../_services';
 export class DisplayAllComponent implements OnInit {
 
   constructor(private displayService: GetAllDataService) { }
-  student = {};
-  coCurricularData = {};
-  extraCurricularData = {};
-  disciplinaryActions = {};
+  student : any;
+  coCurricularData: any;
+  extraCurricularData: any;
+  disciplinaryActions: any;
+  programData: any;
+  courseData: any;
+  noDatamessage = 'No data Available';
   ngOnInit(): void {
     this.displayService.getStudentData().subscribe(data => {
       this.student = data.map(e=>{
@@ -21,7 +24,8 @@ export class DisplayAllComponent implements OnInit {
           name: e.payload.doc.data()['name'],
           age: e.payload.doc.data()['age'],
           address: e.payload.doc.data()['address'],
-          regno: e.payload.doc.data()['regno']
+          regno: e.payload.doc.data()['regno'],
+          email: e.payload.doc.data()['email']
         };
 
       });
@@ -49,7 +53,7 @@ export class DisplayAllComponent implements OnInit {
       console.log(this.extraCurricularData);
 
     });
-    this.displayService.getExtraCurricularData().subscribe(data =>{
+    this.displayService.getDisciplinaryActions().subscribe(data =>{
       this.disciplinaryActions = data.map(e=>{
         return{
           id: e.payload.doc.id,
@@ -61,7 +65,7 @@ export class DisplayAllComponent implements OnInit {
 
     });
     this.displayService.getProgramData().subscribe(data =>{
-      this.disciplinaryActions = data.map(e=>{
+      this.programData = data.map(e=>{
         return{
           id: e.payload.doc.id,
           regno: e.payload.doc.data()['regno'],
@@ -69,11 +73,11 @@ export class DisplayAllComponent implements OnInit {
           currentYear: e.payload.doc.data()['currentYear']
         }
       });
-      console.log(this.disciplinaryActions);
+      console.log(this.programData);
 
     });
     this.displayService.getCourseData().subscribe(data =>{
-      this.disciplinaryActions = data.map(e=>{
+      this.courseData = data.map(e=>{
         return{
           id: e.payload.doc.id,
           regno: e.payload.doc.data()['regno'],
