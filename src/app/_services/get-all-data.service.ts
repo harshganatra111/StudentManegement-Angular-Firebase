@@ -22,4 +22,7 @@ export class GetAllDataService {
   getProgramData(){
     return this.fireService.collection('ProgramData').snapshotChanges();
   }
+  getCourseData(){
+    return this.fireService.collection('CourseData').snapshotChanges();
+  }
 }

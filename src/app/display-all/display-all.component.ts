@@ -72,6 +72,19 @@ export class DisplayAllComponent implements OnInit {
       console.log(this.disciplinaryActions);
 
     });
+    this.displayService.getCourseData().subscribe(data =>{
+      this.disciplinaryActions = data.map(e=>{
+        return{
+          id: e.payload.doc.id,
+          regno: e.payload.doc.data()['regno'],
+          cname: e.payload.doc.data()['cname'],
+          credits: e.payload.doc.data()['credits'],
+          cid: e.payload.doc.data()['cid']
+        }
+      });
+      console.log(this.disciplinaryActions);
+
+    });
   }
 
 }
