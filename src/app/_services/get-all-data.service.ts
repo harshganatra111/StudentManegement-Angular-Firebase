@@ -19,4 +19,7 @@ export class GetAllDataService {
   getDisciplinaryActions(){
     return this.fireService.collection('DisciplinaryActions').snapshotChanges();
   }
+  getProgramData(){
+    return this.fireService.collection('ProgramData').snapshotChanges();
+  }
 }
