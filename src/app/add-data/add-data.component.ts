@@ -11,6 +11,7 @@ export class AddDataComponent implements OnInit {
   address: string;
   email: string;
   student: any;
+  regno: number;
   constructor(private insertService: InsertService,private displayService: GetAllDataService) { }
 
   ngOnInit(): void {
@@ -33,13 +34,14 @@ export class AddDataComponent implements OnInit {
     studentData['age'] = this.age;
     studentData['address'] = this.address;
     studentData['email'] = this.email;
-    studentData['regno'] = 1760000 + parseInt(this.student.length)+ 1;
+    this.regno = 1760000 + parseInt(this.student.length)+ 1;
+    studentData['regno'] = this.regno;
     this.insertService.insertStudentData(studentData).then(res => {
+      alert("Insertion Successful\nStudent Regno is :"+ this.regno);
       this.name="";
       this.address= "";
       this.age=undefined;
       this.email="";
-      alert("Insertion Successful")
       console.log(res);
 
     }).catch(err=>{
