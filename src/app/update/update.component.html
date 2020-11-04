@@ -1,1 +1,63 @@
-<p>update works!</p>
+<div class="container">
+  <div class="container">
+    <h4>
+      All Student Data
+    </h4>
+    <div class="row p-3">
+      <div class="col-md-6 mt-3" *ngFor="let st of student" style="float: left;">
+        <div class="card" *ngIf="!st.isEdit; else elseBlock">
+          <div class="card-body">
+            <div class="card-title">
+              <b> {{st.name}}</b>
+            </div>
+            <div class="card-subtitle">
+              <b>Reg No:</b> {{st.regno}}
+            </div>
+            <div class="card-subtitle">
+              <b>E-mail:</b> {{st.email}}
+            </div>
+            <div class="card-subtitle">
+              <b>Age:</b> {{st.age}}
+            </div>
+            <div class="card-subtitle">
+              <b>Address:</b> {{st.address}}
+            </div>
+            <button class="btn btn-primary" (click)="editRecord(st)">Edit</button>
+          </div>
+        </div>
+        <ng-template #elseBlock>
+          <div class="card">
+            <div class="card-body">
+              <div class="card-title">
+                Edit Employee
+              </div>
+              <div class="row">
+                <div class="form-group">
+                  <div class="col-md-12">
+                    <input type="text" [(ngModel)]="st.editName" class="form-control">
+                  </div>
+                  <div class="col-md-12">
+                    <input type="number" [(ngModel)]="st.editRegno" class="form-control" disabled>
+                  </div>
+                  <div class="col-md-12">
+                    <input type="email" [(ngModel)]="st.editEmail" class="form-control">
+                  </div>
+                  <div class="col-md-12">
+                    <input type="number" [(ngModel)]="st.editAge" class="form-control">
+                  </div>
+                  <div class="col-md-12">
+                    <input type="text" [(ngModel)]="st.editAddress" class="form-control">
+                  </div>
+                </div>
+              </div>
+              <button class="btn btn-danger" (click)="st.isEdit =false">Cancel</button>
+              <button class="btn btn-primary" (click)="onUpdate(st)">Update</button>
+            </div>
+          </div>
+        </ng-template>
+      </div>
+
+    </div>
+  </div>
+
+</div>

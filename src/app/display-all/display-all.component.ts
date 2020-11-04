@@ -86,7 +86,7 @@ export class DisplayAllComponent implements OnInit {
           cid: e.payload.doc.data()['cid']
         }
       });
-      console.log(this.disciplinaryActions);
+      console.log(this.courseData);
 
     });
   }

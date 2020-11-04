@@ -5,10 +5,12 @@ import { AddCourseComponent } from './add-course/add-course.component';
 import { AddDataComponent } from './add-data/add-data.component';
 import { AddProgramComponent } from './add-program/add-program.component';
 import { CoCurricularComponent } from './co-curricular/co-curricular.component';
+import { DeleteDataComponent } from './delete-data/delete-data.component';
 import { DisciplinaryActionsComponent } from './disciplinary-actions/disciplinary-actions.component';
 import { DisplayAllComponent } from './display-all/display-all.component';
 import { ExtraCurricularComponent } from './extra-curricular/extra-curricular.component';
 import { HomeComponent } from './home/home.component';
+import { UpdateComponent } from './update/update.component';
 
 
 const routes: Routes = [
@@ -21,6 +23,8 @@ const routes: Routes = [
   {path: 'ExtraCurricular', component: ExtraCurricularComponent},
   {path: 'AddProgram', component: AddProgramComponent},
   {path: 'AddCourse', component: AddCourseComponent},
+  {path: 'Update', component: UpdateComponent},
+  {path: 'Delete', component: DeleteDataComponent},
   // Insert All paths above this comment
   {path: '**', component: NotFoundComponent}
 ];

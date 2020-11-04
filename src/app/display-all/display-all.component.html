@@ -1,4 +1,3 @@
-<p>display-all works!</p>
 <div class="container">
   <h4>
     All Student Data
@@ -22,8 +21,8 @@
           <div class="card-subtitle">
             <b>Address:</b> {{st.address}}
           </div>
-          <div class="card-title" *ngFor="let pd of programData">
-            <b *ngIf="pd.regno === st.regno"> <u>Program Details</u> </b>
+          <div class="card-title">
+            <b> <u>Program Details</u> </b>
           </div>
           <div class="card-subtitle ml-4" *ngFor="let pd of programData">
             <div *ngIf="pd.regno === st.regno">
@@ -35,8 +34,8 @@
               </div>
             </div>
           </div>
-          <div class="card-title" *ngFor="let cd of courseData">
-            <b *ngIf="cd.regno === st.regno"> <u>Course Details</u> </b>
+          <div class="card-title">
+            <b> <u>Course Details</u> </b>
           </div>
           <div class="card-subtitle ml-4" *ngFor="let cd of courseData">
             <div *ngIf="cd.regno === st.regno">
@@ -51,8 +50,8 @@
               </div>
             </div>
           </div>
-          <div class="card-title" *ngFor="let co of coCurricularData">
-            <b *ngIf="co.regno === st.regno"> <u>Co-curricular Activities</u> </b>
+          <div class="card-title">
+            <b> <u>Co-curricular Activities</u> </b>
           </div>
           <div class="card-subtitle" *ngFor="let co of coCurricularData">
             <div *ngIf="co.regno === st.regno">
@@ -61,8 +60,8 @@
               </ul>
             </div>
           </div>
-          <div class="card-title" *ngFor="let ex of extraCurricularData">
-            <b *ngIf="ex.regno === st.regno"> <u>Extra-curricular Activities</u> </b>
+          <div class="card-title">
+            <b> <u>Extra-curricular Activities</u> </b>
           </div>
           <div class="card-subtitle" *ngFor="let ex of extraCurricularData">
             <div *ngIf="ex.regno === st.regno">
@@ -71,8 +70,8 @@
               </ul>
             </div>
           </div>
-          <div class="card-title" *ngFor="let da of disciplinaryActions">
-            <b *ngIf="da.regno === st.regno"> <u>Disciplinary Actions</u> </b>
+          <div class="card-title">
+            <b> <u>Disciplinary Actions</u> </b>
           </div>
           <div class="card-subtitle" *ngFor="let da of disciplinaryActions">
             <div *ngIf="da.regno === st.regno">
