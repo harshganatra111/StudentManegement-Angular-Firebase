@@ -1,1 +1,90 @@
 <p>delete-data works!</p>
+<div class="container">
+  <h4>
+    All Student Data
+  </h4>
+  <div class="row p-3">
+    <div class="col-md-6 mt-3" *ngFor="let st of student" style="float: left;">
+      <div class="card">
+        <div class="card-body">
+          <div class="card-title">
+            <b> {{st.name}}</b>
+          </div>
+          <div class="card-subtitle">
+            <b>Reg No:</b> {{st.regno}}
+          </div>
+          <div class="card-subtitle">
+            <b>E-mail:</b> {{st.email}}
+          </div>
+          <div class="card-subtitle">
+            <b>Age:</b> {{st.age}}
+          </div>
+          <div class="card-subtitle">
+            <b>Address:</b> {{st.address}}
+          </div>
+          <div class="card-title">
+            <b> <u>Program Details</u> </b>
+          </div>
+          <div class="card-subtitle ml-4" *ngFor="let pd of programData">
+            <div *ngIf="pd.regno === st.regno">
+              <div class="card-subtitle">
+                <b>Start year: </b> {{pd.currentYear}}
+              </div>
+              <div class="card-subtitle">
+                <b>Program Name: </b> {{pd.pname}}
+              </div>
+            </div>
+          </div>
+          <div class="card-title">
+            <b> <u>Course Details</u> </b>
+          </div>
+          <div class="card-subtitle ml-4" *ngFor="let cd of courseData">
+            <div *ngIf="cd.regno === st.regno">
+              <div class="card-subtitle">
+                <b>Course ID: </b> {{cd.cid}}
+              </div>
+              <div class="card-subtitle">
+                <b>Course Name: </b> {{cd.cname}}
+              </div>
+              <div class="card-subtitle">
+                <b>Credits: </b> {{cd.credits}}
+              </div>
+            </div>
+          </div>
+          <div class="card-title">
+            <b> <u>Co-curricular Activities</u> </b>
+          </div>
+          <div class="card-subtitle" *ngFor="let co of coCurricularData">
+            <div *ngIf="co.regno === st.regno">
+              <ul>
+                <li>{{co.message}}</li>
+              </ul>
+            </div>
+          </div>
+          <div class="card-title">
+            <b> <u>Extra-curricular Activities</u> </b>
+          </div>
+          <div class="card-subtitle" *ngFor="let ex of extraCurricularData">
+            <div *ngIf="ex.regno === st.regno">
+              <ul>
+                <li>{{ex.message}}</li>
+              </ul>
+            </div>
+          </div>
+          <div class="card-title">
+            <b> <u>Disciplinary Actions</u> </b>
+          </div>
+          <div class="card-subtitle" *ngFor="let da of disciplinaryActions">
+            <div *ngIf="da.regno === st.regno">
+              <ul>
+                <li>{{da.message}}</li>
+              </ul>
+            </div>
+          </div>
+
+        <button class="btn btn-danger" (click)="deleteData(st.id)">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
