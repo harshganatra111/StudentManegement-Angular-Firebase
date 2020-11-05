@@ -31,7 +31,6 @@ export class UpdateComponent implements OnInit {
         };
 
       });
-      console.log(this.student);
     });
 
   }

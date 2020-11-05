@@ -22,8 +22,6 @@ export class DisciplinaryActionsComponent implements OnInit {
       this.regno=undefined;
       this.message= "";
       alert("Insertion Successful")
-      console.log(res);
-
     }).catch(err=>{
       console.log(err);
 

@@ -27,7 +27,6 @@ export class AddDataComponent implements OnInit {
         };
 
       });
-      console.log(this.student);
       this.getMaxRegno(this.student);
     });
 
@@ -35,10 +34,8 @@ export class AddDataComponent implements OnInit {
   }
   getMaxRegno(student){
     for(var i in student){
-      console.log(student[i]);
       if(student[i].regno > this.maxRegno){
         this.maxRegno = student[i].regno;
-        console.log(this.maxRegno);
 
       }
     }
@@ -57,7 +54,6 @@ export class AddDataComponent implements OnInit {
       this.address= "";
       this.age=undefined;
       this.email="";
-      console.log(res);
 
     }).catch(err=>{
       console.log(err);

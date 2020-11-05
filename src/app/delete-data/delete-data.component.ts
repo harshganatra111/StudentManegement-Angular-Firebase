@@ -29,7 +29,6 @@ export class DeleteDataComponent implements OnInit {
         };
 
       });
-      console.log(this.student);
     });
     this.displayService.getCocurricularData().subscribe(data =>{
       this.coCurricularData = data.map(e=>{
@@ -39,8 +38,6 @@ export class DeleteDataComponent implements OnInit {
           message: e.payload.doc.data()['message']
         }
       });
-      console.log(this.coCurricularData);
-
     });
     this.displayService.getExtraCurricularData().subscribe(data =>{
       this.extraCurricularData = data.map(e=>{
@@ -50,8 +47,6 @@ export class DeleteDataComponent implements OnInit {
           message: e.payload.doc.data()['message']
         }
       });
-      console.log(this.extraCurricularData);
-
     });
     this.displayService.getDisciplinaryActions().subscribe(data =>{
       this.disciplinaryActions = data.map(e=>{
@@ -61,8 +56,6 @@ export class DeleteDataComponent implements OnInit {
           message: e.payload.doc.data()['message']
         }
       });
-      console.log(this.disciplinaryActions);
-
     });
     this.displayService.getProgramData().subscribe(data =>{
       this.programData = data.map(e=>{
@@ -73,8 +66,6 @@ export class DeleteDataComponent implements OnInit {
           currentYear: e.payload.doc.data()['currentYear']
         }
       });
-      console.log(this.programData);
-
     });
     this.displayService.getCourseData().subscribe(data =>{
       this.courseData = data.map(e=>{
@@ -86,8 +77,6 @@ export class DeleteDataComponent implements OnInit {
           cid: e.payload.doc.data()['cid']
         }
       });
-      console.log(this.courseData);
-
     });
   }
   deleteData(id){

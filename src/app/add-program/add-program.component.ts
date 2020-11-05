@@ -40,7 +40,6 @@ export class AddProgramComponent implements OnInit {
       this.pname="";
       this.regno=undefined;
       alert("Insertion Successful")
-      console.log(res);
 
     }).catch(err=>{
       console.log(err);

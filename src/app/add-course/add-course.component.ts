@@ -27,7 +27,6 @@ export class AddCourseComponent implements OnInit {
       this.cid=undefined;
       this.credits=undefined;
       alert("Insertion Successful")
-      console.log(res);
 
     }).catch(err=>{
       console.log(err);
